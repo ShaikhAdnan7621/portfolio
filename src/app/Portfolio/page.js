@@ -42,14 +42,14 @@ const projects = [
         title: "Tech Showroom",
         description:
             "A dynamic website that displays phone data, showcasing my understanding of CRUD operations in a real-world context. Built with Next.js, Tailwind CSS, and MongoDB, this project demonstrates my proficiency in building interactive web applications with a database backend.",
-        technologies: ["Next.js", "Tailwind CSS", "MongoDB"],
+        technologies: ["Next.js", "Tailwind CSS", "Javascript", "MongoDB", "AOS Animation"],
         link: "https://tech-showroom.vercel.app",
     },
     {
         title: "Todo List",
         description:
             "A user-friendly todo list application designed for efficient task management. Built with Next.js and Tailwind CSS, this project highlights my ability to create functional and visually appealing interfaces.  Users can add, edit, delete, and reorder tasks, ensuring a smooth and organized workflow.",
-        technologies: ["Next.js", "Tailwind CSS", "Javascript"],
+        technologies: ["Next.js", "Tailwind CSS", "Javascript",],
         link: "https://merekam.vercel.app",
     },
     {
@@ -58,6 +58,13 @@ const projects = [
             "A website dedicated to the city of Surat, India, showcasing its rich historical and cultural heritage. Built with HTML, CSS and  Bootstrap this project demonstrates my ability to create visually appealing and user-friendly websites.",
         technologies: ["HTML", "CSS", "Bootstrap"],
         link: "https://allbyadnan.netlify.app/project%201/",
+    },
+    {
+        title: "PROPrompter",
+        description:
+            "a web application built with Next.js, Tailwind CSS, and React.js, powered by the Gemini API and MongoDB. It offers a platform to store, share, and discover useful prompts for various tasks.",
+        technologies: ["Gemini API", "Next.js", "Tailwind CSS", "Javascript", "Mongodb],
+        link: "https://pro-prompter.vercel.app/",
     },
 ];
 
