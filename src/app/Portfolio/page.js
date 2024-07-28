@@ -62,7 +62,7 @@ const projects = [
     {
         title: "PROPrompter",
         description: `a web application built with Next.js, Tailwind CSS, and React.js, powered by the Gemini API and MongoDB. It offers a platform to store, share, and discover useful prompts for various tasks.`,
-        technologies: ["Gemini API", "Next.js", "Tailwind CSS", "Javascript", "Mongodb],
+        technologies: ["Gemini API", "Next.js", "Tailwind CSS", "Javascript", "Mongodb",],
         link: "https://pro-prompter.vercel.app/",
     },
 ];
