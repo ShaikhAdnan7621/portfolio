@@ -42,7 +42,7 @@ const projects = [
         title: "Tech Showroom",
         description:
             "A dynamic website that displays phone data, showcasing my understanding of CRUD operations in a real-world context. Built with Next.js, Tailwind CSS, and MongoDB, this project demonstrates my proficiency in building interactive web applications with a database backend.",
-        technologies: ["Next.js", "Tailwind CSS", "MongoDB"],
+        technologies: ["Next.js", "Tailwind CSS", "MongoDB", "AOS Animations"],
         link: "https://tech-showroom.vercel.app",
     },
     {
@@ -58,6 +58,14 @@ const projects = [
             "A website dedicated to the city of Surat, India, showcasing its rich historical and cultural heritage. Built with HTML, CSS and  Bootstrap this project demonstrates my ability to create visually appealing and user-friendly websites.",
         technologies: ["HTML", "CSS", "Bootstrap"],
         link: "https://allbyadnan.netlify.app/project%201/",
+    },
+    
+    {
+        title: "PROPrompter",
+        description:
+            "A web application built with Next.js, Tailwind CSS, and React.js, powered by the Gemini API and MongoDB. It offers a platform to store, share, and discover useful prompts for various tasks.",
+        technologies: ["Gemini API","Next.js", "Tailwind CSS", "MongoDB",],
+        link: "https://pro-prompter.vercel.app",
     },
 ];
 
@@ -292,7 +300,7 @@ export default function Home() {
                                     <p className="text-gray-500 mb-4">
                                         {project.description}
                                     </p>
-                                    <ul className="flex space-x-2">
+                                    <ul className="flex space-x-2 flex-wrap">
                                         {project.technologies.map(
                                             (technology) => (
                                                 <li
