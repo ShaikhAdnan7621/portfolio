@@ -24,6 +24,7 @@ import {
     FaTwitter,
     FaNodeJs,
     FaFigma,
+    FaWix,
 } from "react-icons/fa";
 import {
     SiMongodb,
@@ -78,6 +79,12 @@ const projects = [
         technologies: ["Gemini API", "Next.js", "Tailwind CSS", "Javascript", "Mongodb"],
         link: "https://pro-prompter.vercel.app/",
         githubLink: "https://github.com/ShaikhAdnan7621/PROPrompter"
+    },
+    {
+        title: "TechBrust",
+        description: "An e-commerce web application built with Wix Studio, showcasing a curated selection of fashion products and accessories.",
+        technologies: ["Wix Studio"],
+        link: "https://techbrust.in",
     },
 ];
 
@@ -157,6 +164,10 @@ const skills = [
     {
         icon: <FaGithub />,
         name: "GitHub",
+    },
+    {
+        icon: <FaWix />,
+        name: "Wix Studio",
     },
 ];
 
@@ -345,14 +356,17 @@ export default function Home() {
                                     >
                                         View Project
                                     </a>
-                                    <a
-                                        href={project.githubLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center ml-2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded  "
-                                    >
-                                        <FaGithub /> Repo Link
-                                    </a>
+                                    {
+                                        project.githubLink &&
+                                        <a
+                                            href={project.githubLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center ml-2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded  "
+                                        >
+                                            <FaGithub /> Repo Link
+                                        </a>
+                                    }
                                 </div>
                             </div>
                         ))}
