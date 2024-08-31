@@ -59,13 +59,11 @@ const projects = [
         technologies: ["HTML", "CSS", "Bootstrap"],
         link: "https://allbyadnan.netlify.app/project%201/",
     },
-    
     {
         title: "PROPrompter",
-        description:
-            "A web application built with Next.js, Tailwind CSS, and React.js, powered by the Gemini API and MongoDB. It offers a platform to store, share, and discover useful prompts for various tasks.",
-        technologies: ["Gemini API","Next.js", "Tailwind CSS", "MongoDB",],
-        link: "https://pro-prompter.vercel.app",
+        description: `a web application built with Next.js, Tailwind CSS, and React.js, powered by the Gemini API and MongoDB. It offers a platform to store, share, and discover useful prompts for various tasks.`,
+        technologies: ["Gemini API", "Next.js", "Tailwind CSS", "Javascript", "Mongodb",],
+        link: "https://pro-prompter.vercel.app/",
     },
 ];
 
@@ -142,27 +140,24 @@ export default function Home() {
                 </div>
 
                 <ul
-                    className={`hidden md:flex space-x-8 font-medium text-gray-600 ${
-                        activeNav === "home" ? "text-blue-500" : ""
-                    }`}
+                    className={`hidden md:flex space-x-8 font-medium text-gray-600 ${activeNav === "home" ? "text-blue-500" : ""
+                        }`}
                 >
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "home"
+                        className={`cursor-pointer ${activeNav === "home"
                                 ? "text-blue-500"
                                 : "text-gray-600"
-                        }`}
+                            }`}
                     >
                         <a href="#home" onClick={() => handleNavClick("home")}>
                             <AiOutlineHome size={24} />
                         </a>
                     </li>
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "about"
+                        className={`cursor-pointer ${activeNav === "about"
                                 ? "text-blue-500"
                                 : "text-gray-600"
-                        }`}
+                            }`}
                     >
                         <a
                             href="#about"
@@ -172,11 +167,10 @@ export default function Home() {
                         </a>
                     </li>
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "skills"
+                        className={`cursor-pointer ${activeNav === "skills"
                                 ? "text-blue-500"
                                 : "text-gray-600"
-                        }`}
+                            }`}
                     >
                         <a
                             href="#skills"
@@ -186,11 +180,10 @@ export default function Home() {
                         </a>
                     </li>
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "projects"
+                        className={`cursor-pointer ${activeNav === "projects"
                                 ? "text-blue-500"
                                 : "text-gray-600"
-                        }`}
+                            }`}
                     >
                         <a
                             href="#projects"
@@ -200,11 +193,10 @@ export default function Home() {
                         </a>
                     </li>
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "contact"
+                        className={`cursor-pointer ${activeNav === "contact"
                                 ? "text-blue-500"
                                 : "text-gray-600"
-                        }`}
+                            }`}
                     >
                         <a
                             href="#contact"

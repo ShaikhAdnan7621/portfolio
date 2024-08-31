@@ -140,27 +140,24 @@ export default function Home() {
                 </div>
 
                 <ul
-                    className={`hidden md:flex space-x-8 font-medium text-gray-600 ${
-                        activeNav === "home" ? "text-blue-500" : ""
-                    }`}
+                    className={`hidden md:flex space-x-8 font-medium text-gray-600 ${activeNav === "home" ? "text-blue-500" : ""
+                        }`}
                 >
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "home"
-                                ? "text-blue-500"
-                                : "text-gray-600"
-                        }`}
+                        className={`cursor-pointer ${activeNav === "home"
+                            ? "text-blue-500"
+                            : "text-gray-600"
+                            }`}
                     >
                         <a href="#home" onClick={() => handleNavClick("home")}>
                             <AiOutlineHome size={24} />
                         </a>
                     </li>
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "about"
-                                ? "text-blue-500"
-                                : "text-gray-600"
-                        }`}
+                        className={`cursor-pointer ${activeNav === "about"
+                            ? "text-blue-500"
+                            : "text-gray-600"
+                            }`}
                     >
                         <a
                             href="#about"
@@ -170,11 +167,10 @@ export default function Home() {
                         </a>
                     </li>
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "skills"
-                                ? "text-blue-500"
-                                : "text-gray-600"
-                        }`}
+                        className={`cursor-pointer ${activeNav === "skills"
+                            ? "text-blue-500"
+                            : "text-gray-600"
+                            }`}
                     >
                         <a
                             href="#skills"
@@ -184,11 +180,10 @@ export default function Home() {
                         </a>
                     </li>
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "projects"
-                                ? "text-blue-500"
-                                : "text-gray-600"
-                        }`}
+                        className={`cursor-pointer ${activeNav === "projects"
+                            ? "text-blue-500"
+                            : "text-gray-600"
+                            }`}
                     >
                         <a
                             href="#projects"
@@ -198,11 +193,10 @@ export default function Home() {
                         </a>
                     </li>
                     <li
-                        className={`cursor-pointer ${
-                            activeNav === "contact"
-                                ? "text-blue-500"
-                                : "text-gray-600"
-                        }`}
+                        className={`cursor-pointer ${activeNav === "contact"
+                            ? "text-blue-500"
+                            : "text-gray-600"
+                            }`}
                     >
                         <a
                             href="#contact"
@@ -281,6 +275,26 @@ export default function Home() {
                     </div>
                 </section>
 
+                <section id="skills" className="container mx-auto px-4 mt-8 overflow-x-auto">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                        My Skills
+                    </h2>
+                    <div className="flex gap-6 p-4 overflow-x-scroll">
+                        {skills.map((skill) => (
+                            <div
+                                key={skill.name}
+                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md w-52"
+                            >
+                                <span className="text-5xl text-blue-500">
+                                    {skill.icon}
+                                </span>
+                                <h3 className="text-md font-medium text-gray-800 mt-3 text-center">
+                                    {skill.name}
+                                </h3>
+                            </div>
+                        ))}
+                    </div>
+                </section>
                 <section id="projects" className="container mx-auto px-4 mt-8">
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">
                         My Projects
@@ -289,7 +303,7 @@ export default function Home() {
                         {projects.map((project) => (
                             <div
                                 key={project.title}
-                                className="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out hover:shadow-xl flex flex-col justify-between"
+                                className="bg-white rounded-lg overflow-hidden transition duration-300 ease-in-out shadow-md hover:shadow-xl flex flex-col justify-between"
                             >
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-gray-800 mb-2">
@@ -323,6 +337,103 @@ export default function Home() {
                         ))}
                     </div>
                 </section>
+
+
+                <section id="timeline" className="container mx-auto px-4 mt-8 max-w-[1080px] ">
+                    <h2 className="text-3xl font-bold text-gray-800 text-center mb-4">
+                        Life Journey
+                    </h2>
+                    <div className="relative pt-3">
+                        <div className="absolute top-1/2 left-1/2  w-1 h-full bg-gray-900 -translate-x-1/2 -translate-y-1/2 "></div>
+                        <div className="relative">
+                            <div className="">
+                                <div className="mb-8">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <h3 className="text-lg font-medium text-gray-800 w-1/2 pr-3 text-right">2018 - 2020</h3>
+                                        <div className="w-1/2">
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center ">
+                                        <div className="w-1/4"></div>
+                                        <div className="p-4 bg-white shadow-md hover:shadow-lg rounded-lg w-3/4">
+                                            <p className="text-gray-500 mb-2">- Completed secondary school education in Shegaon, Maharashtra, with a strong academic record, achieving 77% in the Secondary School Certificate (SSC) examination.</p>
+                                            <p className="text-gray-500 mb-2">- Furthered my technical skills by obtaining an Advance Diploma in Computer Application (ADCA) from the Center Technical Organization (CTO), demonstrating a strong foundation in computer fundamentals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mb-8">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <div className="w-1/2"></div>
+                                        <h3 className="text-lg font-medium text-gray-800 w-1/2 pl-3 text-left">2020 - 2022</h3>
+                                    </div>
+
+                                    <div className="flex items-center ">
+                                        <div className="p-4 bg-white shadow-md hover:shadow-lg rounded-lg w-3/4">
+                                            <p className="text-gray-500 mb-2">- Successfully completed higher secondary education (HSC) in Shegaon, Maharashtra, achieving 67% marks.</p>
+                                            <p className="text-gray-500 mb-2">- Further expanded my skillset with certifications in Advanced Tally and Advanced Excel, gaining practical knowledge in financial accounting software and advanced spreadsheet functionalities.</p>
+                                            <p className="text-gray-500 mb-2">- Embarked on a self-learning journey in Python programming, demonstrating a proactive approach to expanding my technical capabilities.</p>
+                                        </div>
+                                        <div className="w-1/4"></div>
+                                    </div>
+                                </div>
+
+                                <div className="mb-8">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <h3 className="text-lg font-medium text-gray-800 w-1/2 pr-3 text-right">July 2022 - March 2023</h3>
+                                        <div className="w-1/2">
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center ">
+                                        <div className="w-1/4"></div>
+                                        <div className="p-4 bg-white shadow-md hover:shadow-lg rounded-lg w-3/4">
+                                            <p className="text-gray-500 mb-2">- Gained valuable practical experience as a Data Entry Operator at Leemboodi Fashion, contributing to their operations by managing inventory records and maintaining data accuracy.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="mb-8">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <div className="w-1/2"></div>
+                                        <h3 className="text-lg font-medium text-gray-800 w-1/2 pl-3 text-left">March 2023 - June 2023</h3>
+                                    </div>
+                                    <div className="flex items-center ">
+                                        <div className="p-4 bg-white shadow-md hover:shadow-lg rounded-lg w-3/4">
+                                            <p className="text-gray-500 mb-2">- Engaged in freelance data entry projects, further honing my attention to detail and proficiency in data management. </p>
+                                        </div>
+                                        <div className="w-1/4"></div>
+                                    </div>
+                                </div>
+                                <div className="mb-8">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <h3 className="text-lg font-medium text-gray-800 w-1/2 pr-3 text-right">August 2023 - Present</h3>
+                                        <div className="w-1/2">
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center ">
+                                        <div className="w-1/4"></div>
+                                        <div className="p-4 bg-white shadow-md hover:shadow-lg rounded-lg w-3/4">
+                                            <p className="text-gray-500 mb-2">- Currently working as a Social Media Executive at Ajmera Fashion, effectively managing YouTube channels, implementing engaging content strategies, and optimizing social media presence.</p>
+                                            <p className="text-gray-500 mb-2">- Simultaneously pursuing a Bachelor of Computer Application (BCA) through a distance learning program at the Hindustan Institute of Technology & Science (HITS), demonstrating a commitment to expanding my knowledge and skills in the field of computer applications.  </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="mb-8">
+                                    <div className="flex items-center justify-between mb-2  ">
+                                        <div className="w-1/2"></div>
+                                        <h3 className="text-lg font-medium text-gray-800 w-1/2 pl-3 text-left">Since Joining BCA</h3>
+                                    </div>
+                                    <div className="flex items-center ">
+                                        <div className="p-4 bg-white shadow-md hover:shadow-lg rounded-lg w-3/4">
+                                            <p className="text-gray-500 mb-2">- Immersed myself in self-directed learning of web development, building a strong foundation in HTML, CSS, JavaScript, React.js, Next.js, MongoDB, Bootstrap, Tailwind CSS, and Python, demonstrating my passion for continuous learning and skill development.</p>
+                                        </div>
+                                        <div className="w-1/4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section >
 
                 <section id="contact" className="container mx-auto px-4 mt-8">
                     <div className="container mx-auto px-4 py-12 bg-gray-200 rounded-lg shadow-md mt-8 ">
@@ -375,13 +486,13 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </main >
 
             <footer className="bg-gray-800 text-white py-4 ">
                 <div className="container mx-auto text-center">
                     <p>© 2023 Shaikh Adnan. All rights reserved.</p>
                 </div>
             </footer>
-        </div>
+        </div >
     );
 }
