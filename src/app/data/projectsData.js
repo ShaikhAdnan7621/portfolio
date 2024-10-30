@@ -39,10 +39,4 @@ export const projects = [
         link: "https://pro-prompter.vercel.app/",
         githubLink: "https://github.com/ShaikhAdnan7621/PROPrompter"
     },
-    {
-        title: "TechBrust",
-        description: "An e-commerce web application built with Wix Studio, showcasing a curated selection of fashion products and accessories.",
-        technologies: ["Wix Studio"],
-        link: "https://techbrust.in",
-    },
 ];
