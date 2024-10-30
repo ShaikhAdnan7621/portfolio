@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+
+
 import {
     AiOutlineHome,
     AiOutlineUser,
@@ -9,167 +11,20 @@ import {
     AiOutlineProject,
     AiOutlineMail,
 } from "react-icons/ai";
-import { CgMail } from "react-icons/cg";
+import { CgDarkMode, CgMail } from "react-icons/cg";
 import {
-    FaHtml5,
-    FaJs,
-    FaReact,
-    FaCss3,
-    FaFileExcel,
-    FaPython,
-    FaBootstrap,
     FaGithub,
     FaLinkedinIn,
     FaInstagram,
     FaTwitter,
-    FaNodeJs,
-    FaFigma,
-    FaWix,
+    FaYoutube,
+    FaFacebook
 } from "react-icons/fa";
-import {
-    SiMongodb,
-    SiTailwindcss,
-    SiGooglesheets,
-    SiWindows,
-    SiArduino,
-    SiOpencv,
-    SiNextdotjs,
-    SiCanva,
-    SiVisualstudiocode,
-} from "react-icons/si";
 import { GiJourney } from "react-icons/gi";
 import Link from "next/link";
+import { skills } from "@/app/data/skillsData";
+import { projects } from "@/app/data/projectsData";
 
-const projects = [
-    {
-        title: "Games Zone",
-        description:
-            "A fun and interactive website featuring two engaging games: Memory Tiles and Catch the Box. Challenge yourself with a typing test to boost your typing speed and accuracy. This project showcases my ability to create engaging user experiences with Next.js and Tailwind CSS.",
-        technologies: ["Next.js", "Tailwind CSS", "Javascript"],
-        link: "https://checkmytype.vercel.app",
-        githubLink: "https://github.com/ShaikhAdnan7621/checkmytype"
-    },
-    {
-        title: "Tech Showroom",
-        description:
-            "A dynamic website that displays phone data, showcasing my understanding of CRUD operations in a real-world context. Built with Next.js, Tailwind CSS, and MongoDB, this project demonstrates my proficiency in building interactive web applications with a database backend.",
-        technologies: ["Next.js", "Tailwind CSS", "Javascript", "MongoDB", "AOS Animation"],
-        link: "https://tech-showroom.vercel.app",
-        githubLink: "https://github.com/ShaikhAdnan7621/Tech-Showroom"
-    },
-    {
-        title: "Todo List",
-        description:
-            "A user-friendly todo list application designed for efficient task management. Built with Next.js and Tailwind CSS, this project highlights my ability to create functional and visually appealing interfaces.  Users can add, edit, delete, and reorder tasks, ensuring a smooth and organized workflow.",
-        technologies: ["Next.js", "Tailwind CSS", "Javascript"],
-        link: "https://merekam.vercel.app",
-        githubLink: "https://github.com/ShaikhAdnan7621/merekam"
-    },
-    {
-        title: "I love Surat",
-        description:
-            "A website dedicated to the city of Surat, India, showcasing its rich historical and cultural heritage. Built with HTML, CSS and  Bootstrap this project demonstrates my ability to create visually appealing and user-friendly websites.",
-        technologies: ["HTML", "CSS", "Bootstrap"],
-        link: "https://allbyadnan.netlify.app/project%201/",
-        githubLink: "#" // Placeholder - Add actual link if available
-    },
-    {
-        title: "PROPrompter",
-        description: `a web application built with Next.js, Tailwind CSS, and React.js, powered by the Gemini API and MongoDB. It offers a platform to store, share, and discover useful prompts for various tasks.`,
-        technologies: ["Gemini API", "Next.js", "Tailwind CSS", "Javascript", "Mongodb"],
-        link: "https://pro-prompter.vercel.app/",
-        githubLink: "https://github.com/ShaikhAdnan7621/PROPrompter"
-    },
-    {
-        title: "TechBrust",
-        description: "An e-commerce web application built with Wix Studio, showcasing a curated selection of fashion products and accessories.",
-        technologies: ["Wix Studio"],
-        link: "https://techbrust.in",
-    },
-];
-
-const skills = [
-    {
-        icon: <FaHtml5 />,
-        name: "HTML",
-    },
-    {
-        icon: <FaCss3 />,
-        name: "CSS",
-    },
-    {
-        icon: <FaJs />,
-        name: "Javascript",
-    },
-    {
-        icon: <FaReact />,
-        name: "React.js",
-    },
-    {
-        icon: <SiNextdotjs />,
-        name: "Next.js",
-    },
-    {
-        icon: <FaNodeJs />,
-        name: "Node.js",
-    },
-    {
-        icon: <SiMongodb />,
-        name: "MongoDB",
-    },
-    {
-        icon: <FaPython />,
-        name: "Python",
-    },
-    {
-        icon: <SiTailwindcss />,
-        name: "Tailwind CSS",
-    },
-    {
-        icon: <FaBootstrap />,
-        name: "Bootstrap",
-    },
-    {
-        icon: <SiGooglesheets />,
-        name: "Google Sheets",
-    },
-    {
-        icon: <SiWindows />,
-        name: "Tally Prime",
-    },
-    {
-        icon: <FaFileExcel />,
-        name: "Advance Excel",
-    },
-    {
-        icon: <SiArduino />,
-        name: "Arduino",
-    },
-    {
-        icon: <SiOpencv />,
-        name: "OpenCV",
-    },
-    {
-        icon: <SiCanva />,
-        name: "Canva",
-    },
-    {
-        icon: <FaFigma />,
-        name: "Figma",
-    },
-    {
-        icon: <SiVisualstudiocode />,
-        name: "VS Code",
-    },
-    {
-        icon: <FaGithub />,
-        name: "GitHub",
-    },
-    {
-        icon: <FaWix />,
-        name: "Wix Studio",
-    },
-];
 
 export default function Home() {
     const [activeNav, setActiveNav] = useState("home");
@@ -177,6 +32,7 @@ export default function Home() {
     const handleNavClick = (nav) => {
         setActiveNav(nav);
     };
+
 
     return (
         <div className="bg-gray-900 min-h-screen font-sans text-white">
@@ -189,66 +45,75 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <nav className="flex justify-between items-center px-4 py-2 bg-gray-800 shadow-md fixed w-full z-10">
-                <div className="flex items-center">
-                    <h1 className="text-2xl font-bold text-orange-500 mr-4">
-                        Shaikh Adnan
-                    </h1>
-                </div>
+            <nav className=" px-4 py-2 bg-gray-800 shadow-md fixed w-full z-10">
+                <div className=" flex justify-between items-center lg:px-10 max-w-[1320px] mx-auto">
+                    <div className="  md:flex hidden items-center pl-4">
+                        <h1 className="text-2xl font-bold text-orange-500 mr-4 uppercase">
+                            Shaikh Adnan
+                        </h1>
+                    </div>
 
-                <ul
-                    className={`hidden md:flex space-x-8 font-medium text-gray-400 ${activeNav === "home" ? "text-orange-500" : ""
-                        }`}
-                >
-                    <li
-                        className={`cursor-pointer ${activeNav === "home" ? "text-orange-500" : "text-gray-400"
-                            }`}
+                    <ul
+                        className={`mx-auto md:m-0 flex space-x-8 font-medium text-gray-400 pr-4 ${activeNav === "home" ? "text-orange-500" : ""}`}
                     >
-                        <a href="#home" onClick={() => handleNavClick("home")}>
-                            <AiOutlineHome size={24} />
-                        </a>
-                    </li>
-                    <li
-                        className={`cursor-pointer ${activeNav === "about" ? "text-orange-500" : "text-gray-400"
-                            }`}
-                    >
-                        <a href="#about" onClick={() => handleNavClick("about")}>
-                            <AiOutlineUser size={24} />
-                        </a>
-                    </li>
-                    <li
-                        className={`cursor-pointer ${activeNav === "skills" ? "text-orange-500" : "text-gray-400"
-                            }`}
-                    >
-                        <a href="#skills" onClick={() => handleNavClick("skills")}>
-                            <AiOutlineBook size={24} />
-                        </a>
-                    </li>
-                    <li
-                        className={`cursor-pointer ${activeNav === "projects" ? "text-orange-500" : "text-gray-400"
-                            }`}
-                    >
-                        <a href="#projects" onClick={() => handleNavClick("projects")}>
-                            <AiOutlineProject size={24} />
-                        </a>
-                    </li>
-                    <li
-                        className={`cursor-pointer ${activeNav === "timeline" ? "text-orange-500" : "text-gray-400"
-                            }`}
-                    >
-                        <a href="#timeline" onClick={() => handleNavClick("timeline")}>
-                            <GiJourney size={24} />
-                        </a>
-                    </li>
-                    <li
-                        className={`cursor-pointer ${activeNav === "contact" ? "text-orange-500" : "text-gray-400"
-                            }`}
-                    >
-                        <a href="#contact" onClick={() => handleNavClick("contact")}>
-                            <AiOutlineMail size={24} />
-                        </a>
-                    </li>
-                </ul>
+                        <li
+                            className={`cursor-pointer ${activeNav === "home" ? "text-orange-500" : "text-gray-400"
+                                }`}
+                        >
+                            <a href="#home" onClick={() => handleNavClick("home")}>
+                                <AiOutlineHome size={24} />
+                            </a>
+                        </li>
+                        <li
+                            className={`cursor-pointer ${activeNav === "about" ? "text-orange-500" : "text-gray-400"
+                                }`}
+                        >
+                            <a href="#about" onClick={() => handleNavClick("about")}>
+                                <AiOutlineUser size={24} />
+                            </a>
+                        </li>
+                        <li
+                            className={`cursor-pointer ${activeNav === "skills" ? "text-orange-500" : "text-gray-400"
+                                }`}
+                        >
+                            <a href="#skills" onClick={() => handleNavClick("skills")}>
+                                <AiOutlineBook size={24} />
+                            </a>
+                        </li>
+                        <li
+                            className={`cursor-pointer ${activeNav === "projects" ? "text-orange-500" : "text-gray-400"
+                                }`}
+                        >
+                            <a href="#projects" onClick={() => handleNavClick("projects")}>
+                                <AiOutlineProject size={24} />
+                            </a>
+                        </li>
+                        <li
+                            className={`cursor-pointer ${activeNav === "timeline" ? "text-orange-500" : "text-gray-400"
+                                }`}
+                        >
+                            <a href="#timeline" onClick={() => handleNavClick("timeline")}>
+                                <GiJourney size={24} />
+                            </a>
+                        </li>
+                        <li
+                            className={`cursor-pointer ${activeNav === "contact" ? "text-orange-500" : "text-gray-400"
+                                }`}
+                        >
+                            <a href="#contact" onClick={() => handleNavClick("contact")}>
+                                <AiOutlineMail size={24} />
+                            </a>
+                        </li>
+                        <li
+                            className={`cursor-pointer ${activeNav === "contact" ? "text-orange-500" : "text-gray-400"
+                                }`}
+                        >
+                            <a href="/" onClick={() => handleNavClick("contact")}>
+                                <CgDarkMode size={24} className="text-orange-500" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
 
             <main className="py-16 lg:px-10 max-w-[1320px] mx-auto">
@@ -261,7 +126,7 @@ export default function Home() {
                             height={200}
                             className="rounded-full mb-4"
                         />
-                        <h1 className="text-4xl font-bold text-orange-500 mb-2">
+                        <h1 className="text-4xl font-bold text-orange-500 mb-1 uppercase">
                             Shaikh Adnan
                         </h1>
                         <h2 className="text-lg font-medium text-gray-400 mb-4">
@@ -281,8 +146,10 @@ export default function Home() {
                     </div>
                 </section>
 
+                <hr className=" border-orange-500 my-16" />
+
                 <section id="about" className="container mx-auto px-4 pt-16">
-                    <h2 className="text-3xl font-bold text-orange-500 mb-6">
+                    <h2 className="text-3xl font-bold text-center text-orange-500 mb-10">
                         About Me
                     </h2>
                     <p className="text-gray-400 mb-3">
@@ -297,15 +164,18 @@ export default function Home() {
                     </p>
                     <div className="text-left">
                         <Link href="/resume" target="_blank"> {/* Replace '/resume' with your actual resume page route */}
-                            <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 opacity-90">
                                 View My Resume
                             </button>
                         </Link>
                     </div>
                 </section>
 
-                <section id="skills" className="container mx-auto px-4 pt-16">
-                    <h2 className="text-3xl font-bold text-orange-500 mb-6">
+
+                <hr className=" border-orange-500 my-16" />
+
+                <section id="skills" className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center text-orange-500 mb-10">
                         My Skills
                     </h2>
                     <div className="flex flex-wrap gap-3 md:gap-6 justify-center w-full">
@@ -323,8 +193,10 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="projects" className="container mx-auto px-4 pt-16">
-                    <h2 className="text-3xl font-bold text-orange-500 mb-6">
+                <hr className=" border-orange-500 my-16" />
+
+                <section id="projects" className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center text-orange-500 mb-10">
                         My Projects
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -373,8 +245,10 @@ export default function Home() {
                     </div>
                 </section>
 
+                <hr className=" border-orange-500 my-16" />
+
                 <section id="timeline" className="container mx-auto px-4 pt-16 ">
-                    <h2 className="text-3xl font-bold text-orange-500 mb-6">
+                    <h2 className="text-3xl font-bold text-center text-orange-500 mb-10">
                         Life Journey
                     </h2>
                     <div className="relative pt-3">
@@ -478,8 +352,10 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="contact" className="container mx-auto px-4 pt-16">
-                    <h2 className="text-3xl font-bold text-orange-500 mb-6 text-center">
+                <hr className=" border-orange-500 my-16" />
+
+                <section id="contact" className="container mx-auto px-4 ">
+                    <h2 className="text-3xl font-bold text-center text-orange-500 mb-10">
                         Get in Touch
                     </h2>
                     <div className="flex flex-col items-center space-y-6">
@@ -503,11 +379,25 @@ export default function Home() {
                                 LinkedIn
                             </a>
                             <a
+                                href="https://www.youtube.com/@CodeONfinGER"
+                                className="flex items-center justify-center bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 focus:outline-none focus:ring focus:ring-orange-300"
+                            >
+                                <FaYoutube className="mr-2" />
+                                Youtube
+                            </a>
+                            <a
                                 href="https://github.com/ShaikhAdnan7621"
                                 className="flex items-center justify-center bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 focus:outline-none focus:ring focus:ring-orange-300"
                             >
                                 <FaGithub className="mr-2" />
                                 GitHub
+                            </a>
+                            <a
+                                href="https://www.facebook.com/profile.php?id=100074050533332"
+                                className="flex items-center justify-center bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 focus:outline-none focus:ring focus:ring-orange-300"
+                            >
+                                <FaFacebook className="mr-2" />
+                                FaceBook
                             </a>
                             <a
                                 href="https://www.instagram.com/mr_silent7621/"
