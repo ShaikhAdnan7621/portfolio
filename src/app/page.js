@@ -25,6 +25,34 @@ import Link from "next/link";
 import { skills } from "@/app/data/skillsData";
 import { projects } from "@/app/data/projectsData";
 
+export async function generateMetadata() {
+    return {
+        title: "Shaikh Adnan | Frontend Developer & AI Enthusiast",
+        description: "Shaikh Adnan - A passionate Frontend Developer specializing in React.js, Next.js, and AI-driven automation. Building dynamic, user-friendly web applications and innovative AI-powered tools.",
+        openGraph: {
+            title: "Shaikh Adnan | Frontend Developer & AI Enthusiast",
+            description: "Explore my portfolio showcasing projects in React.js, Next.js, and AI-driven automation. Passionate about building scalable and dynamic web applications.",
+            url: "https://officialad.vercel.app/",
+            siteName: "Shaikh Adnan Portfolio",
+            images: [
+                {
+                    url: "https://officialad.vercel.app/profile-pic.jpg", // Replace with your actual image
+                    width: 1200,
+                    height: 630,
+                    alt: "Shaikh Adnan - Frontend Developer & AI Enthusiast",
+                },
+            ],
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Shaikh Adnan | Frontend Developer & AI Enthusiast",
+            description: "Frontend Developer skilled in React.js, Next.js, and AI-driven automation. Check out my portfolio for exciting projects!",
+            images: ["https://officialad.vercel.app/profile-pic.jpg"], // Update with your actual social image
+        },
+    };
+}
+
 
 export default function Home() {
     const [activeNav, setActiveNav] = useState("home");
@@ -36,14 +64,7 @@ export default function Home() {
 
     return (
         <div className="bg-white min-h-screen font-sans text-gray-900"> {/* Changed background to white */}
-            <Head>
-                <title>Shaikh Adnan - Frontend Developer</title>
-                <meta
-                    name="description"
-                    content="Portfolio website of Shaikh Adnan, a frontend developer."
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+ 
 
             <nav className=" px-4 py-2 bg-gray-100 shadow-md fixed w-full z-10"> {/* Changed background to light gray */}
                 <div className=" flex justify-between items-center lg:px-10 max-w-[1320px] mx-auto">
