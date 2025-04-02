@@ -29,7 +29,7 @@ export async function generateMetadata() {
             images: ["https://officialad.vercel.app/profile-pic.jpg"], // Update with actual social image URL
         },
         other: {
-            "keywords": "Shaikh Adnan, Frontend Developer, Next.js Developer, React.js, AI Developer, Machine Learning, Web Developer, JavaScript, Python AI, Portfolio, AI Automation, Full Stack Developer",
+            "keywords": "Shaikh Adnan, Shaikh Adnan Portfolio, Shaikh Adnan Developer, Shaikh Adnan React Developer, Next.js, Shaikh Adnan Python, AI ML Engineer, Web Developer, JS Dev,",
         },
     };
 }
