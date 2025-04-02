@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-
+import { generateMetadata } from "./metadata"; 
 
 import {
     AiOutlineHome,
