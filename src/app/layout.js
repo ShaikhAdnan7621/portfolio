@@ -28,6 +28,9 @@ export async function generateMetadata() {
             description: "Frontend Developer skilled in React.js, Next.js, and AI-driven automation.",
             images: ["https://officialad.vercel.app/profile-pic.jpg"], // Update with actual social image URL
         },
+        other: {
+            "keywords": "Shaikh Adnan, Frontend Developer, Next.js Developer, React.js, AI Developer, Machine Learning, Web Developer, JavaScript, Python AI, Portfolio, AI Automation, Full Stack Developer",
+        },
     };
 }
 
